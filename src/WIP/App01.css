@@ -1,14 +1,12 @@
 .App {
+  min-height: 100vh;
   text-align: center;
   display:flex;
 justify-content: center;
 align-items: center;
 color:azure;
+background-color: rgb(28, 29, 31);
 font-family: "Gill Sans", sans-serif;
-}
-
-body{
-  background-color: rgb(38, 39, 40);
 }
 
 .container{
@@ -30,25 +28,25 @@ body{
 }
 
 .inputForm{
-  font-size: 0.9em;
-  text-align: left;
+  font-weight: 800;
+  font-size: 1.1em;
+  text-align: center;
   width: 100%;
-  border: solid 2px #8894a0;
+  border-radius: 2px;
+  border-style: none;
   padding: 5px;
-  background-color: rgb(29, 30, 32);
-  color:#8894a0;
+  background-color:rgb(145, 154, 172);
+  margin-top: 5px;
+  color:#294b6b;
   resize:vertical;
 }
 
 .inputForm:focus{
-  text-align: left;
- background-color: rgb(200, 151, 116);
+ background-color: rgb(143, 179, 247);
  color:rgb(9, 9, 41);
-  border: solid 2px rgb(221, 103, 34);
-  color: rgb(139, 37, 0);
+  border: solid 2px rgb(0, 132, 255);
   outline-style: none;
   box-shadow: none;
-  font-size: 0.9em;
 /*border-color: transparent;*/
 }
 
@@ -88,64 +86,23 @@ body{
   background-color: rgb(86, 201, 9);
 }
 
-.showButton{
-  border: solid 2px white;
-  border-radius: 2px;
-  padding:12px 20px 12px 20px;
-  flex:1 10px;
-  background-color:transparent;
-  font-size: 0.5em;
-  font-weight: 700;
-  color:aliceblue;
-}
-
-.showButton:hover{
-  background-color: rgb(15, 22, 58);
-  border: solid 2px rgb(92, 182, 255);
-  color:rgb(104, 174, 255);
-}
-
 button{
-  border: solid 2px transparent;
+  border: none;
   border-radius: 2px;
   padding: 6px;
   flex:1 10px;
   margin: 2px;
+  background-color: #1d2377;
+  font-size: 1.1em;
+  color:aliceblue;
 }
 
 button:hover{
-  background-color: rgb(193, 32, 208);
-  border: solid 2px rgb(221, 103, 34);
-}
-
-.buttonSubmit{
-  border: none;
-  width: 5em;
-  border-radius: 2px;
-  padding: 6px;
-  flex:1 10px;
-  background-color: #28725f;
-  font-size: 1.1em;
-  color:rgb(58, 233, 190);
-}
-
-.buttonSubmit:hover{
-  background-color: rgb(199, 107, 14);
-  border: none;
-  width: 5em;
-  border-radius: 2px;
-  padding: 6px;
-  flex:1 10px;
-  color:rgb(231, 171, 17);
+  background-color: rgb(53, 114, 90);
 }
 
 .textLi{
-  text-align: left;
-  padding-top: 2px;
-  padding-left: 4px;
-  font-size: 0.7em;
-  font-weight: 600;
-  color: #95a0ac;
+  flex:6 10px;
 }
 
 .textTitle{
@@ -154,7 +111,6 @@ button:hover{
   padding-left: 5px;
   padding-bottom: 3px;
   flex:9;
-  font-weight: 600;
 }
 
 .textRatingL
@@ -162,9 +118,9 @@ button:hover{
   flex:1;
   font-weight: 700;
   color: #eb1455;
-  border-radius: 0 6px 0 0;
+  border-radius: 0 10px 10px 0;
   border: 1px solid #eb1455;
-  background-color: #bdc7cf;
+  background-color: #100852;
 }
 
 .textRatingM
@@ -172,9 +128,9 @@ button:hover{
   flex:1;
   font-weight: 700;
   color: #eb1455;
-  border-radius: 0 6px 0 0;
+  border-radius: 0 10px 10px 0;
   border: 1px solid #eb1455;
-  background-color: #d0d3e0;
+  background-color: #00137c;
 }
 
 .textRatingH
@@ -182,51 +138,32 @@ button:hover{
   flex:1;
   font-weight: 700;
   color: #eb1455;
-  border-radius: 0 6px 0 0;
+  border-radius: 0 10px 10px 0;
   border: 1px solid #eb1455;
-  background-color: #e1e2ed;
+  background-color: #000cb8;
 }
 
 .textDescr{
-  background-color: rgb(63, 81, 68);
-  color: rgb(207, 225, 225);
-  height:auto;
-  min-height: 40px;
+  background-color: royalblue;
+  height:50px;
   text-align: justify;
   text-justify: auto;
   text-indent: 30px;
   font-size: 0.7em;
-  padding: 0.6em;
+  padding: 0.3em;
   text-overflow: ellipsis;
   line-height: 0.9em;
 }
 
 .textDescr2
 {
-  background-color: rgb(44, 50, 109);
-  color: rgb(220, 235, 235);
-  height:auto;
-  min-height: 40px;
-  text-align: justify;
-  text-justify: auto;
-  text-indent: 30px;
-  font-size: 0.6em;
-  padding: 0.5em;
-  text-overflow: ellipsis;
-  line-height: 0.9em;
-}
-
-.textDescr3
-{
-  background-color: rgb(44, 62, 220);
-  color: rgb(220, 235, 235);
-  height:auto;
-  min-height: 40px;
+  background-color: rgb(17, 4, 95);
+  height:50px;
   text-align: justify;
   text-justify: auto;
   text-indent: 30px;
   font-size: 1em;
-  padding: 0.5em;
+  padding: 0.3em;
   text-overflow: ellipsis;
   line-height: 0.9em;
 }
