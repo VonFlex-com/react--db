@@ -7,6 +7,11 @@ color:azure;
 font-family: "Gill Sans", sans-serif;
 }
 
+:root {
+  --li-bg-color: rgb(26, 30, 37);
+  --txt-rating: rgb(110, 92, 71);
+}
+
 body{
   background-color: rgb(38, 39, 40);
 }
@@ -100,9 +105,9 @@ body{
 }
 
 .showButton:hover{
-  background-color: rgb(15, 22, 58);
-  border: solid 2px rgb(92, 182, 255);
-  color:rgb(104, 174, 255);
+  background-color: rgb(22, 25, 37);
+  border: solid 2px rgb(223, 241, 255);
+  color:rgb(255, 255, 255);
 }
 
 button{
@@ -149,7 +154,7 @@ button:hover{
 }
 
 .textTitle{
-  background-color: crimson;
+  background-color: var(--li-bg-color);
   text-align: left;
   padding-left: 5px;
   padding-bottom: 3px;
@@ -161,9 +166,9 @@ button:hover{
 {
   flex:1;
   font-weight: 700;
-  color: #eb1455;
+  color: var(--txt-rating);
   border-radius: 0 6px 0 0;
-  border: 1px solid #eb1455;
+  border: 1px solid var(--li-bg-color);
   background-color: #bdc7cf;
 }
 
@@ -171,9 +176,9 @@ button:hover{
 {
   flex:1;
   font-weight: 700;
-  color: #eb1455;
+  color: var(--txt-rating);
   border-radius: 0 6px 0 0;
-  border: 1px solid #eb1455;
+  border: 1px solid var(--li-bg-color);
   background-color: #d0d3e0;
 }
 
@@ -181,14 +186,14 @@ button:hover{
 {
   flex:1;
   font-weight: 700;
-  color: #eb1455;
+  color: var(--txt-rating);
   border-radius: 0 6px 0 0;
-  border: 1px solid #eb1455;
+  border: 1px solid var(--li-bg-color);
   background-color: #e1e2ed;
 }
 
 .textDescr{
-  background-color: rgb(63, 81, 68);
+  background-color: rgb(62, 64, 68);
   color: rgb(207, 225, 225);
   height:auto;
   min-height: 40px;
@@ -242,7 +247,7 @@ button:hover{
   padding: 0;
   width:80%;
   align-items: center;
-  background-color: rgb(49, 25, 71);
+  background-color: transparent;
 }
 
 .liElem{
