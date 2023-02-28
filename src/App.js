@@ -120,6 +120,14 @@ const App = () => {
     }
   };
 
+  const IsValid = (newPost) =>{
+    //Boolean(newPost.title && newPost.descript && newPost.note);
+    if(!newPost){
+      return true;
+    }
+    return false;
+  } 
+
  // const validateString = [required(), minLength(1)];
 
   return (
@@ -137,7 +145,6 @@ const App = () => {
             className="inputForm"
             type="text"
             value={todo.title}
-            
             onChange={(e) => setTodo({ ...todo, title: e.target.value })}
           />
           <label className="textLi">DESCRIPTION</label>
@@ -206,7 +213,7 @@ const App = () => {
         </div>
         <div className="submitButFlex">
         <button className="buttonSubmit"
-        disabled = {postDisbaled==true}
+        disabled = {IsValid(todo.title)}
         type="submit">{editId ? "EDIT " + editId : "ADD"}</button>
         </div>  
         </form>}
