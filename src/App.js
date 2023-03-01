@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import PostForm from "./components/PostForm";
 import PostList from "./components/PostList";
 import axios from 'axios';
 
@@ -22,13 +21,12 @@ const App = () => {
 
   const [show, setShow] = useState(false);
 
-  const [postDisbaled, setpostDisabled] = useState(false);
-
   const [currentRadioValue, setCurrentValue] = useState('1');
+  /*
   const handleRadioChange = value => {
-    console.log(value);
+    //console.log(value);
     setCurrentValue(value);
-  };
+  };*/
 
   const [value, setValue] = useState("");
 
@@ -113,22 +111,13 @@ const App = () => {
     setShow(!show);
   };
 
-  //check empty field
-  const isDisabled = (title) =>{
-    if(!title){
-      alert("Missing movie title")
-    }
-  };
-
-  const IsValid = (newPost) =>{
-    //Boolean(newPost.title && newPost.descript && newPost.note);
-    if(!newPost){
+  //Submit button validation emptiness 
+  const IsValid = (tit) =>{
+    if(!tit){
       return true;
     }
     return false;
-  } 
-
- // const validateString = [required(), minLength(1)];
+  }
 
   return (
     <div className="App">
