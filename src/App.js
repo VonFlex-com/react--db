@@ -171,6 +171,7 @@ const App = () => {
 
         <div className="radioElem">
           <input
+          className="inputRadio"
             name="radio-item-1"
             value="2"
             type="radio"
@@ -203,7 +204,7 @@ const App = () => {
         <div className="submitButFlex">
         <button className="buttonSubmit"
         disabled = {IsValid(todo.title)}
-        type="submit">{editId ? "EDIT " + editId : "ADD"}</button>
+        type="submit">{editId ? "EDIT " + editId : IsValid(todo.title)?"MISSING INFO...":"ADD"}</button>
         </div>  
         </form>}
         <PostList

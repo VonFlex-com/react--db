@@ -83,14 +83,19 @@ body{
 
 .radioElem{
   flex:.2;
-  background-color: rgb(45, 49, 82);
   margin-left: 90px;
   margin-top: 5px;
   margin-bottom: 7px;
   height:40px;
   border-radius: 5px;
   line-height: 40px;
+  background-color: rgb(45, 49, 82);
   border: solid 2px rgb(121, 131, 189);
+}
+
+.radioElem input:checked ~ .checkmark {
+  background-color: rgb(47, 59, 190);
+  border: solid 2px rgb(0, 38, 255);
 }
 
 .editButton{
@@ -144,7 +149,7 @@ button:hover{
 .buttonSubmit{
   display: flex;
   flex-flow: row-reverse;
-  flex:.3 10px;
+  flex:.5 10px;
   border: none;
   width: 5em;
   border-radius: 2px;
