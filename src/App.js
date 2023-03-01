@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import PostList from "./components/PostList";
+import Overlay from "./components/Overlay";
 import axios from 'axios';
 
 
@@ -63,12 +64,12 @@ const App = () => {
         fetchTodos();
         setEditId(0);
       }
+      return;
     }
     else {
       e.preventDefault();
       if(!todo.note){
         todo.note = 1;
-        //console.log("the current value is "+currentRadioValue + " , todo note = "+ todo.note);
       }
       let response = await axios.post(endPoint, todo)
       if (response) {
@@ -80,7 +81,7 @@ const App = () => {
           poster: "",
           note: ""
         });
-        setShow(!show);
+        setIsOpen(!isOpen);
       } else {
         alert("failed operation");
       }
@@ -106,9 +107,8 @@ const App = () => {
   const handleEdit = (id) => {
     const editTodo = todos.find((i) => i.id === id);
     setTodo(editTodo);
-    //console.log("title = " + editTodo.title + editTodo.poster + editTodo.note + ", id = " + id);
     setEditId(id);
-    setShow(!show);
+    setIsOpen(!isOpen);
   };
 
   //Submit button validation emptiness 
@@ -119,15 +119,34 @@ const App = () => {
     return false;
   }
 
+  //Overlay form boolean
+  const [isOpen, setIsOpen] = useState(false);
+
+  //toggle Overlay
+  const toggleOverlay = () => {
+    setIsOpen(!isOpen);
+    clearForm();
+  };
+
+  //Clear form
+  const clearForm = () =>
+  {
+    setTodo({
+      title: "",
+      descript: "",
+      poster: "",
+      note: ""
+    });
+  }
+
   return (
     <div className="App">
       <div className="container">
-        <h1>Maelstrom.........
-          <button className="showButton" type="button" onClick={() => setShow(!show)}>
-            {show === true ? 'DONE' : 'ADD A NEW ENTRY'}
-          </button>
-        </h1>
-        {show && <form className="todoForm" onSubmit={handleSubmitB}
+        <h1>Maelstrom.........</h1>
+        <button className="showButton" onClick={toggleOverlay}>ADD NEW ENTRY</button>
+        <Overlay isOpen={isOpen} onClose={toggleOverlay}>
+    
+        <form className="todoForm" onSubmit={handleSubmitB}
           onReset={e => console.log('onReset', e)}>
           <label className="textLi">FILM TITLE</label>
           <input
@@ -138,6 +157,8 @@ const App = () => {
           />
           <label className="textLi">DESCRIPTION</label>
           <textarea
+            rows="5" 
+            cols="40"
             className="inputForm"
             type="text"
             value={todo.descript}
@@ -206,7 +227,8 @@ const App = () => {
         disabled = {IsValid(todo.title)}
         type="submit">{editId ? "EDIT " + editId : IsValid(todo.title)?"MISSING INFO...":"ADD"}</button>
         </div>  
-        </form>}
+        </form>
+        </Overlay>
         <PostList
           todos={todos}
           handleEdit={handleEdit}
